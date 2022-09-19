@@ -1,0 +1,32 @@
+<form class="example-form" (submit)="onSubmit($event)">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Zip code</mat-label>
+
+    <input 
+    type="text" 
+    matInput 
+    [formControl]="zipFormControl" 
+    placeholder="Ex. 10005" >
+
+    <mat-error *ngIf="zipFormControl.hasError('required')">
+      Zip code is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="zipFormControl.hasError('pattern')">
+      Zip code must contains <strong>only digits</strong>
+    </mat-error>
+    <button  matSuffix mat-icon-button class="btn" (click)="onSubmit($event)">
+      <mat-icon>search</mat-icon>
+    </button>
+
+  </mat-form-field>
+  <button matSuffix disabled mat-icon-button class="btn btn-question">
+    <mat-icon 
+    #tooltip="matTooltip"
+        matTooltip="Only US zip codes are allowed"
+        matTooltipPosition="right"
+        matTooltipHideDelay="1000">error_outline</mat-icon>
+  </button>
+</form>
+
+<app-weathercard *ngIf="!request" [weatherData] = value></app-weathercard>
+<mat-spinner *ngIf="request" class="spinner"></mat-spinner>

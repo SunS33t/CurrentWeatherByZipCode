@@ -1,0 +1,23 @@
+<div *ngIf="weatherData" class="card">
+    <div class="card-header">
+        <div class="card-header-title">
+            {{city}}
+        </div>
+    </div>
+    <div class="card-main">
+        <div class="card-main-temperature">
+            {{temp}} °F / {{temp | fahrenheitToCelsius}} °C
+        </div>
+        <div class="card-main-description">
+            {{condition}} <img src="http://openweathermap.org/img/wn/{{icon}}.png" alt="weather_icon">
+        </div>
+    </div>
+    <div class="card-image">
+        
+    </div>
+    <div class="card-footer">
+        <div class="card-footer-feels_like">
+            The real feel is {{feelsLike}} °F / {{feelsLike | fahrenheitToCelsius}} °C
+        </div>
+    </div>
+</div>
