@@ -3,8 +3,7 @@
     animation: 2s show ease;
     display: block;
     width: 90%;
-    height: 70%;
-    min-height: 600px;
+    height: 70vh;
     margin: 0 auto;
     margin-top: 20px;
     border-radius: 20px;
@@ -12,46 +11,77 @@
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     font-family: 'Montserrat', sans-serif;
+    @media screen and (max-width: 600px) {
+        height: 40vh;
+    }
     &-header {
-        min-height: 300px;
-        height: 50%;
+        height: 30vh;
         background: linear-gradient(180deg, #1dc0ed 0%, white 95%);
+        @media screen and (max-width: 600px) {
+            height: 15vh;
+        }
         &-title{
             padding-top: 30px;
             text-align: center;
             font-size: 40px;
+            line-height: 50px;
             font-weight: 500;
             color: rgb(54 53 53);
         } 
     }
     &-main {
-        height: 30%;
-        min-height: 200px;
+        height: 30vh;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
         align-content: center;
         align-items: center;
+        @media screen and (max-width: 600px) {
+            height: 15vh;
+        }
         &-temperature{
             font-size: 50px;
             line-height: 60px;
             font-weight: 100;
+            @media screen and (max-width: 600px) {
+                font-size: 35px;
+            }
+            @media screen and (max-width: 450px) {
+                font-size: 25px;
+            }
         }
         &-description {
+            text-align: center;
             line-height: 60px;
             font-size: 30px;
             font-weight: 300;
+            @media screen and (max-width: 600px) {
+                font-size: 25px;
+            }
+            @media screen and (max-width: 450px) {
+                font-size: 15px;
+            }
+            .waether-icon {
+                @media screen and (max-width: 450px) {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
         }
     }
     &-footer{
-        height: 20%;
-        min-height: 100px;
+        height: 10vh;
+        text-align: center;
         display: flex;
         align-items: center;
         justify-content: flex-end;
         flex-direction: column;
         padding-bottom: 20px;
+        @media screen and (max-width: 600px) {
+            height: 10vh;
+            font-size: 10px;
+        }
     }
 }
 
